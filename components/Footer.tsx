@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Mail, MoveUp } from "lucide-react";
 
 const footerLinks = [
-  { label: "The Book", href: "#truth" },
-  { label: "Chapters", href: "#chapters" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "About Arthur", href: "#about" },
+  { label: "The Book", href: "/#truth" },
+  { label: "Chapters", href: "/#chapters" },
+  { label: "Reviews", href: "/#reviews" },
+  { label: "About Weston", href: "/#about" },
 ];
 
 export default function Footer() {
