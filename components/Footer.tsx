@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Mail, MoveUp } from "lucide-react";
 
 const footerLinks = [
-  { label: "The Book", href: "#book" },
+  { label: "The Book", href: "#truth" },
   { label: "Chapters", href: "#chapters" },
   { label: "Reviews", href: "#reviews" },
   { label: "About Arthur", href: "#about" },

@@ -122,7 +122,7 @@ export default function TruthBehindScript() {
               className="mt-10 max-w-2xl"
             >
               <p className="text-[15px] leading-8 text-white/45 md:text-[17px] md:leading-9">
-                Arthur Renn spent years questioning the systems, beliefs, and
+                Weston Renn spent years questioning the systems, beliefs, and
                 invisible forces that shape the way we see the world.
               </p>
 
