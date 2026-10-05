@@ -288,6 +288,9 @@ export default function ProductPage() {
 
               <div className="mt-2 flex items-end justify-center gap-3">
                 <span className="font-serif text-[54px] leading-none text-[#eeeae2] sm:text-[62px]">
+                  <span className="mr-3 text-[32px] text-[#68645d] line-through sm:text-[38px]">
+                    $25
+                  </span>
                   $17
                 </span>
 
