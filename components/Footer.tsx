@@ -34,47 +34,6 @@ export default function Footer() {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-16">
-        <div className="border-b border-white/[0.08] py-24 sm:py-28 lg:py-36">
-          <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:items-end">
-            <div>
-              <div className="mb-7 flex items-center gap-3">
-                <span className="h-px w-9 bg-[#a89577]" />
-
-                <span className="text-[9px] uppercase tracking-[0.4em] text-[#a89577]">
-                  Reality Before The Script
-                </span>
-              </div>
-
-              <h2 className="max-w-4xl font-serif text-[48px] leading-[0.91] tracking-[-0.05em] sm:text-[64px] md:text-[78px] lg:text-[96px]">
-                The story ends.
-                <br />
-                <span className="text-[#a89577]">The questions begin.</span>
-              </h2>
-            </div>
-
-            <motion.a
-              href="#truth"
-              whileHover={{ y: -4 }}
-              whileTap={{ scale: 0.98 }}
-              className="group relative inline-flex h-16 w-full items-center justify-center overflow-hidden border border-[#a89577]/40 px-8 sm:w-auto"
-            >
-              <span className="absolute inset-0 bg-[#a89577]/[0.04] transition-colors duration-500 group-hover:bg-[#a89577]/[0.09]" />
-
-              <span className="relative flex items-center gap-5">
-                <span className="text-[10px] font-medium uppercase tracking-[0.28em]">
-                  Enter The Book
-                </span>
-
-                <ArrowUpRight
-                  size={16}
-                  strokeWidth={1.2}
-                  className="text-[#a89577] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-                />
-              </span>
-            </motion.a>
-          </div>
-        </div>
-
         <div className="grid gap-14 border-b border-white/[0.08] py-16 sm:py-20 lg:grid-cols-[1.3fr_0.7fr_0.7fr] lg:gap-20 lg:py-24">
           <div>
             <div className="mb-6">

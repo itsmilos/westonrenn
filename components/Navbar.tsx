@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <div className="relative z-30 px-6 md:px-10 lg:px-150">
+    <div className="relative z-30 px-6 md:px-10 lg:px-150 bg-[#0b0b0a]">
       <header className="flex h-24 items-center justify-between">
         <Link href="/" className="group">
           <div className="font-serif text-xl tracking-[0.25em] text-[#eeeae2] transition group-hover:text-white">

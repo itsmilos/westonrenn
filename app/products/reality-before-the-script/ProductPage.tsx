@@ -3,7 +3,14 @@
 import { useEffect, useState } from "react";
 import Script from "next/script";
 import { motion } from "framer-motion";
-import { ArrowDown, ArrowUpRight, Check, Lock, Sparkles } from "lucide-react";
+import {
+  ArrowDown,
+  ArrowUpRight,
+  Check,
+  Eye,
+  Lock,
+  Sparkles,
+} from "lucide-react";
 
 const particles = [
   { left: "8%", top: "20%", delay: 0 },
@@ -390,31 +397,225 @@ export default function ProductPage() {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.2 }}
-            className="mt-20 flex flex-col items-center gap-3"
+          <motion.section
+            initial={{ opacity: 0, y: 35 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{
+              duration: 0.9,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="mt-28"
           >
-            <span className="text-[7px] uppercase tracking-[0.4em] text-[#57544f]">
-              Begin reading
-            </span>
+            <div className="mb-8 flex items-end justify-between border-b border-white/[0.08] pb-6">
+              <div>
+                <p className="text-[8px] uppercase tracking-[0.45em] text-[#a89577]">
+                  Beyond the cover
+                </p>
+
+                <h2 className="mt-4 max-w-3xl font-serif text-[35px] leading-[1.02] tracking-[-0.035em] text-[#eeeae2] sm:text-[48px] lg:text-[58px]">
+                  There is more
+                  <br />
+                  <span className="text-[#a89577]">beneath the surface.</span>
+                </h2>
+              </div>
+
+              <div className="hidden items-center gap-3 sm:flex">
+                <Eye size={15} strokeWidth={1} className="text-[#a89577]" />
+
+                <span className="text-[8px] uppercase tracking-[0.35em] text-[#57544f]">
+                  Look closer
+                </span>
+              </div>
+            </div>
+
+            <div className="grid gap-3 lg:grid-cols-12">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{
+                  duration: 0.9,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="group relative overflow-hidden border border-[#a89577]/20 bg-[#11110f] lg:col-span-7"
+              >
+                <img
+                  src="/ebook3.webp"
+                  alt="Reality Before The Script by Weston Renn"
+                  className="block h-full min-h-[620px] w-full object-cover object-center transition-transform duration-1000 group-hover:scale-[1.025]"
+                />
+
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0b0b0a] via-transparent to-black/10" />
+
+                <div className="absolute left-6 top-6">
+                  <span className="border border-white/10 bg-[#0b0b0a]/50 px-3 py-2 text-[7px] uppercase tracking-[0.3em] text-[#c8b89a] backdrop-blur-md">
+                    The Book
+                  </span>
+                </div>
+
+                <div className="absolute bottom-7 left-7 right-7">
+                  <p className="text-[8px] uppercase tracking-[0.4em] text-[#a89577]">
+                    Weston Renn
+                  </p>
+
+                  <h3 className="mt-3 max-w-xl font-serif text-[28px] leading-[1.1] text-[#eeeae2] sm:text-[36px]">
+                    What if the reality you know is only the version you were
+                    given?
+                  </h3>
+                </div>
+              </motion.div>
+
+              <div className="grid gap-3 lg:col-span-5">
+                <motion.div
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.15 }}
+                  transition={{
+                    duration: 0.8,
+                    delay: 0.1,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                  className="border border-white/[0.07] bg-[#11110f] p-7 sm:p-9"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-[8px] uppercase tracking-[0.4em] text-[#a89577]">
+                      The premise
+                    </span>
+
+                    <span className="text-[8px] tracking-[0.3em] text-white/15">
+                      01
+                    </span>
+                  </div>
+
+                  <h3 className="mt-8 font-serif text-[26px] leading-[1.2] text-[#eeeae2] sm:text-[31px]">
+                    Some truths do not arrive as answers.
+                  </h3>
+
+                  <p className="mt-6 text-[14px] leading-7 text-white/40">
+                    They arrive as questions. Questions about perception,
+                    influence, consciousness, belief, and the invisible
+                    structures shaping the world around us.
+                  </p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.15 }}
+                  transition={{
+                    duration: 0.8,
+                    delay: 0.2,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                  className="grid grid-cols-3 border border-[#a89577]/15 bg-[#0f0f0e]"
+                >
+                  <div className="flex min-h-[170px] flex-col justify-between p-5 sm:p-7">
+                    <span className="text-[8px] tracking-[0.3em] text-white/15">
+                      01
+                    </span>
+
+                    <div>
+                      <p className="font-serif text-[38px] leading-none text-[#c8b89a]">
+                        41
+                      </p>
+
+                      <p className="mt-3 text-[8px] uppercase leading-4 tracking-[0.18em] text-white/30">
+                        Chapters
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex min-h-[170px] flex-col justify-between border-x border-white/[0.07] p-5 sm:p-7">
+                    <span className="text-[8px] tracking-[0.3em] text-white/15">
+                      02
+                    </span>
+
+                    <div>
+                      <p className="font-serif text-[38px] leading-none text-[#c8b89a]">
+                        01
+                      </p>
+
+                      <p className="mt-3 text-[8px] uppercase leading-4 tracking-[0.18em] text-white/30">
+                        Edition
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex min-h-[170px] flex-col justify-between p-5 sm:p-7">
+                    <span className="text-[8px] tracking-[0.3em] text-white/15">
+                      03
+                    </span>
+
+                    <div>
+                      <p className="font-serif text-[38px] leading-none text-[#c8b89a]">
+                        ∞
+                      </p>
+
+                      <p className="mt-3 text-[8px] uppercase leading-4 tracking-[0.18em] text-white/30">
+                        Questions
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
 
             <motion.div
-              animate={{ y: [0, 5, 0] }}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
               transition={{
-                duration: 1.8,
-                repeat: Infinity,
-                ease: "easeInOut",
+                duration: 0.8,
+                delay: 0.15,
+                ease: [0.22, 1, 0.36, 1],
               }}
+              className="mt-3 grid gap-3 md:grid-cols-3"
             >
-              <ArrowDown size={15} strokeWidth={1} className="text-[#a89577]" />
-            </motion.div>
-          </motion.div>
-        </div>
+              {[
+                {
+                  number: "01",
+                  title: "Question",
+                  text: "Begin with the things you have always accepted as obvious.",
+                },
+                {
+                  number: "02",
+                  title: "Explore",
+                  text: "Follow the ideas, patterns and possibilities hidden beneath the surface.",
+                },
+                {
+                  number: "03",
+                  title: "Decide",
+                  text: "Come to your own conclusions about what deserves to be believed.",
+                },
+              ].map((item) => (
+                <div
+                  key={item.number}
+                  className="group border border-white/[0.07] bg-[#11110f] p-7 transition-colors duration-500 hover:border-[#a89577]/25"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-[8px] tracking-[0.3em] text-[#a89577]">
+                      {item.number}
+                    </span>
 
-        <div className="pointer-events-none absolute bottom-[-30px] left-1/2 -translate-x-1/2 select-none whitespace-nowrap font-serif text-[100px] leading-none tracking-[-0.08em] text-white/[0.018] sm:text-[180px] lg:text-[260px]">
-          THE SCRIPT
+                    <ArrowUpRight
+                      size={14}
+                      strokeWidth={1}
+                      className="text-white/20 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    />
+                  </div>
+
+                  <h3 className="mt-12 font-serif text-2xl text-[#eeeae2]">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-4 text-sm leading-6 text-white/35">
+                    {item.text}
+                  </p>
+                </div>
+              ))}
+            </motion.div>
+          </motion.section>
         </div>
       </main>
     </>
