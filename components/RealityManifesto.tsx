@@ -158,7 +158,7 @@ export default function RealityManifesto() {
               width={1000}
               height={1400}
               priority
-              className="h-full min-h-[650px] w-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]"
+              className="block h-auto w-full object-contain sm:object-cover"
             />
 
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/10" />

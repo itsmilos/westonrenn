@@ -443,7 +443,7 @@ export default function ProductPage() {
                 <img
                   src="/ebook3.webp"
                   alt="Reality Before The Script by Weston Renn"
-                  className="block h-full min-h-[620px] w-full object-cover object-center transition-transform duration-1000 group-hover:scale-[1.025]"
+                  className="block h-full min-h-[420px] w-full object-cover object-center transition-transform duration-1000 group-hover:scale-[1.025] sm:min-h-[620px]"
                 />
 
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0b0b0a] via-transparent to-black/10" />
