@@ -23,10 +23,19 @@ export default function PolarCheckoutButton() {
         throw new Error(data.error || "Could not create checkout");
       }
 
-      await PolarEmbedCheckout.create(data.url, { theme: "dark" });
+      const isMobile = window.matchMedia("(max-width: 767px)").matches;
+
+      if (isMobile) {
+        window.location.href = data.url;
+        return;
+      }
+
+      await PolarEmbedCheckout.create(data.url, {
+        theme: "dark",
+      });
     } catch (err) {
       console.error("Polar checkout error:", err);
-      setError("Checkout popup could not be opened. Please try again.");
+      setError("Checkout could not be opened. Please try again.");
     } finally {
       setLoading(false);
     }
