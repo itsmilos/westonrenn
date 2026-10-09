@@ -22,7 +22,7 @@ const polar = createPolar({
   accessToken: process.env.POLAR_ACCESS_TOKEN!,
 }); 
     const origin = new URL(siteUrl).origin;
-
+console.log("Polar embed origin:", origin);
     const checkout = await polar.checkouts.create({
       products: [productId],
       success_url: `${origin}/success?checkout_id={CHECKOUT_ID}`,
