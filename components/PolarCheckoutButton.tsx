@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { PolarEmbedCheckout } from "@polar-sh/checkout/embed";
 import { ArrowUpRight } from "lucide-react";
 
 export default function PolarCheckoutButton() {
@@ -30,9 +29,7 @@ export default function PolarCheckoutButton() {
         return;
       }
 
-      await PolarEmbedCheckout.create(data.url, {
-        theme: "dark",
-      });
+      window.location.href = data.url;
     } catch (err) {
       console.error("Polar checkout error:", err);
       setError("Checkout could not be opened. Please try again.");
