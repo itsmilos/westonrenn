@@ -170,7 +170,7 @@ export default function RealityManifesto() {
                 </p>
 
                 <p className="mt-2 font-serif text-xl text-[#eeeae2]">
-                  Arthur Renn
+                  Weston Renn
                 </p>
               </div>
 

@@ -75,7 +75,7 @@ export default function FacebookPost() {
               <div className="relative overflow-hidden border border-[#c8b89a]/30">
                 <Image
                   src="/ebook1.webp"
-                  alt="Reality Before the Script by Arthur Renn"
+                  alt="Reality Before the Script by Weston Renn"
                   width={800}
                   height={1200}
                   priority
@@ -156,7 +156,7 @@ export default function FacebookPost() {
                 <p className="mt-8">It wasn&apos;t.</p>
 
                 <p className="mt-8">
-                  Instead, Arthur Renn starts somewhere much more uncomfortable:
+                  Instead, Weston Renn starts somewhere much more uncomfortable:
                   with the possibility that many of the things we consider
                   reality were never entirely our own ideas to begin with.
                 </p>

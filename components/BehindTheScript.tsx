@@ -197,7 +197,7 @@ export default function TruthBehindScript() {
               <div className="h-px w-10 bg-white/10" />
 
               <span className="text-[8px] uppercase tracking-[0.4em] text-white/20">
-                Arthur Renn
+                Weston Renn
               </span>
 
               <span className="text-[8px] uppercase tracking-[0.4em] text-[#a89577]/60">
