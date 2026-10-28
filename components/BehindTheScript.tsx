@@ -325,7 +325,7 @@ export default function TruthBehindScript() {
                 Digital Edition
               </p>
 
-              <p className="mt-1 font-serif text-sm text-[#c8b89a]">$17 USD</p>
+              <p className="mt-1 font-serif text-sm text-[#c8b89a]">$20 USD</p>
             </motion.div>
 
             <div className="absolute left-[4%] top-[10%] font-serif text-[90px] leading-none text-white/[0.025] sm:text-[130px]">
