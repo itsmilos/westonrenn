@@ -5,7 +5,27 @@ import Script from "next/script";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Check, Eye, Lock, Sparkles } from "lucide-react";
 
-const CHECKOUT_URL = "https://westonrenn.gumroad.com/l/fctjs";
+const EDITIONS = [
+  {
+    id: "single",
+    name: "Reality Before The Script",
+    description: "Digital Edition · Delivered instantly",
+    price: 19.99,
+    originalPrice: 40,
+    checkoutUrl: "https://westonrenn.gumroad.com/l/fctjs", 
+    image: "/ebook2.webp",
+  },
+  {
+    id: "bundle",
+    name: "Reality Before The Script + Renn Hidden Story",
+    description: "Both files delivered instantly. Complete bundle.",
+    price: 24.99,
+    originalPrice: 50,
+    checkoutUrl: "https://westonrenn.gumroad.com/l/OVDJE_STAVI_LINK_ZA_BUNDLE", 
+    image: "/ebook4.webp", 
+    badge: "Most Popular",
+  },
+];
 
 const particles = [
   { left: "8%", top: "20%", delay: 0 },
@@ -20,6 +40,14 @@ const particles = [
 
 export default function ProductPage() {
   const [viewers, setViewers] = useState(24);
+  const [selectedEdition, setSelectedEdition] = useState(EDITIONS[0]);
+
+  useEffect(() => {
+    EDITIONS.forEach((ed) => {
+      const img = new Image();
+      img.src = ed.image;
+    });
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -162,12 +190,19 @@ export default function ProductPage() {
               />
 
               <div className="relative overflow-hidden bg-[#11110f] p-[4px] shadow-[0_40px_100px_rgba(0,0,0,0.8)]">
-                <div className="relative overflow-hidden">
-                  <img
-                    src="/ebook2.webp"
-                    alt="Reality Before The Script by Weston Renn"
-                    className="block h-auto w-full"
-                  />
+                <div className="relative overflow-hidden min-h-[350px]">
+                  {EDITIONS.map((edition) => (
+                    <img
+                      key={edition.id}
+                      src={edition.image}
+                      alt={edition.name}
+                      className={`absolute inset-0 block h-auto w-full transition-opacity duration-500 ease-in-out ${
+                        selectedEdition.id === edition.id
+                          ? "opacity-100 relative z-10"
+                          : "opacity-0 pointer-events-none z-0"
+                      }`}
+                    />
+                  ))}
 
                   <motion.div
                     animate={{ x: ["-120%", "150%"] }}
@@ -177,10 +212,10 @@ export default function ProductPage() {
                       repeatDelay: 4,
                       ease: "easeInOut",
                     }}
-                    className="pointer-events-none absolute inset-y-0 left-0 w-[35%] skew-x-[-20deg] bg-gradient-to-r from-transparent via-white/[0.10] to-transparent"
+                    className="pointer-events-none absolute inset-y-0 left-0 w-[35%] skew-x-[-20deg] bg-gradient-to-r from-transparent via-white/[0.10] to-transparent z-20"
                   />
 
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#c8b89a]/10 via-transparent to-black/20" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#c8b89a]/10 via-transparent to-black/20 z-20" />
                 </div>
               </div>
             </motion.div>
@@ -214,17 +249,87 @@ export default function ProductPage() {
             transition={{ delay: 0.8, duration: 0.8 }}
             className="mx-auto mt-12 max-w-xl"
           >
+            <div className="mb-8 space-y-3">
+              <div className="text-center mb-4">
+                <span className="text-[8px] uppercase tracking-[0.35em] text-[#a89577]">
+                  [ Choose Your Edition ]
+                </span>
+              </div>
+
+              {EDITIONS.map((edition) => {
+                const isSelected = selectedEdition.id === edition.id;
+                return (
+                  <div
+                    key={edition.id}
+                    onClick={() => setSelectedEdition(edition)}
+                    className={`relative cursor-pointer border p-5 transition-all duration-300 group ${
+                      isSelected
+                        ? "border-[#a89577] bg-[#141311] shadow-[0_0_25px_rgba(168,149,119,0.12)]"
+                        : "border-white/[0.08] bg-[#11110f] hover:border-white/20 hover:bg-[#131311]"
+                    }`}
+                  >
+                    {edition.badge && (
+                      <div className="absolute -top-3 right-5 z-20 flex items-center gap-1.5 border border-[#a89577]/60 bg-[#161513] px-3 py-1 text-[9px] font-semibold uppercase tracking-[0.25em] text-[#c8b89a] shadow-[0_4px_15px_rgba(168,149,119,0.25)]">
+                        <Sparkles size={11} className="text-[#a89577]" />
+                        <span>{edition.badge}</span>
+                      </div>
+                    )}
+
+                    <div className="flex items-center justify-between gap-4">
+                      <div className="flex items-center gap-4">
+                        <div
+                          className={`flex h-4 w-4 shrink-0 items-center justify-center rounded-full border transition-colors ${
+                            isSelected
+                              ? "border-[#a89577] bg-transparent"
+                              : "border-white/30 group-hover:border-white/50"
+                          }`}
+                        >
+                          {isSelected && (
+                            <motion.div
+                              layoutId="activeRadio"
+                              className="h-2 w-2 rounded-full bg-[#c8b89a]"
+                              transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                            />
+                          )}
+                        </div>
+
+                        <div>
+                          <p className={`font-serif text-[15px] transition-colors ${
+                            isSelected ? "text-[#eeeae2]" : "text-[#c2bcaf]"
+                          }`}>
+                            {edition.name}
+                          </p>
+                          <p className="mt-0.5 text-[11px] text-[#77736b]">
+                            {edition.description}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="text-right shrink-0">
+                        <span className="font-serif text-[18px] text-[#eeeae2]">
+                          ${edition.price}
+                        </span>
+                        <span className="ml-2 text-[11px] text-[#57544f] line-through">
+                          ${edition.originalPrice}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
             <div className="text-center">
               <span className="text-[8px] uppercase tracking-[0.35em] text-[#68645d]">
-                One-time payment
+                Selected Edition Total
               </span>
 
               <div className="mt-2 flex items-end justify-center gap-3">
                 <span className="font-serif text-[54px] leading-none text-[#eeeae2] sm:text-[62px]">
                   <span className="mr-3 text-[32px] text-[#68645d] line-through sm:text-[38px]">
-                    $40
+                    ${selectedEdition.originalPrice}
                   </span>
-                  $20
+                  ${selectedEdition.price}
                 </span>
 
                 <span className="mb-1 text-[10px] uppercase tracking-[0.2em] text-[#68645d]">
@@ -251,10 +356,10 @@ export default function ProductPage() {
 
             <div className="mt-8 flex justify-center">
               <a
-                href="https://westonrenn.gumroad.com/l/fctjs"
+                href={selectedEdition.checkoutUrl}
                 className="inline-flex min-h-[56px] w-full items-center justify-center border border-[#c8b89a]/50 bg-[#c8b89a] px-8 py-4 text-[10px] font-medium uppercase tracking-[0.25em] text-[#0b0b0a] transition-all duration-300 hover:border-[#eeeae2] hover:bg-[#eeeae2] sm:w-auto sm:min-w-[280px]"
               >
-                Get Instant Access — $20
+                Get Instant Access — ${selectedEdition.price}
               </a>
             </div>
 
@@ -292,9 +397,9 @@ export default function ProductPage() {
                   className="mb-2 text-[#a89577]"
                 />
                 <span className="text-[8px] uppercase tracking-[0.15em] text-[#77736b]">
-                  Lifetime
+                  ALL TAX
                   <br />
-                  Access
+                  INCLUDED
                 </span>
               </div>
             </div>
