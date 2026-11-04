@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Script from "next/script";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Check, Eye, Lock, Sparkles } from "lucide-react";
 
@@ -62,11 +61,6 @@ export default function ProductPage() {
 
   return (
     <>
-      <Script
-        src="https://gumroad.com/js/gumroad.js"
-        strategy="afterInteractive"
-      />
-
       <main className="relative min-h-screen overflow-hidden bg-[#0b0b0a] text-[#eeeae2]">
         <div className="pointer-events-none absolute inset-0">
           <motion.div
@@ -357,6 +351,8 @@ export default function ProductPage() {
             <div className="mt-8 flex justify-center">
               <a
                 href={selectedEdition.checkoutUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex min-h-[56px] w-full items-center justify-center border border-[#c8b89a]/50 bg-[#c8b89a] px-8 py-4 text-[10px] font-medium uppercase tracking-[0.25em] text-[#0b0b0a] transition-all duration-300 hover:border-[#eeeae2] hover:bg-[#eeeae2] sm:w-auto sm:min-w-[280px]"
               >
                 Get Instant Access — ${selectedEdition.price}
