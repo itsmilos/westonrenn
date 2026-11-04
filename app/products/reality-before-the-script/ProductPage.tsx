@@ -21,7 +21,7 @@ const EDITIONS = [
     description: "Both files delivered instantly. Complete bundle.",
     price: 24.99,
     originalPrice: 50,
-    checkoutUrl: "https://westonrenn.gumroad.com/l/OVDJE_STAVI_LINK_ZA_BUNDLE", 
+    checkoutUrl: "https://westonrenn.gumroad.com/l/mbotl", 
     image: "/ebook4.webp", 
     badge: "Most Popular",
   },
