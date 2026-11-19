@@ -30,7 +30,7 @@ const EDITIONS = [
     description: "Audio Edition · Listen anytime, anywhere",
     price: 21.99,
     originalPrice: 40,
-    checkoutUrl: "AUDIOBOOK_CHECKOUT_URL",
+    checkoutUrl: "https://westonrenn.gumroad.com/l/xkktd",
     image: "/audio1.webp",
   },
 ];
